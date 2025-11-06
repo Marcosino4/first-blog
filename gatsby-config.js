@@ -1,5 +1,5 @@
 module.exports = {
-  siteMetadata: { title: `Mi Blog Moderno`, description: `Blog universitario`, author: `Estudiante` },
+  siteMetadata: { title: `Mi Primer Blog`, description: `Blog universitario`, author: `Estudiante` },
   plugins: [
     `gatsby-transformer-remark`,
     {

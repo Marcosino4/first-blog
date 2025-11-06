@@ -1,1 +1,214 @@
-body { font-family: sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #fafafa;
+  --text: #111;
+  --card: #ffffff;
+  --border: #e5e5e5;
+  --accent: #007aff;
+  --radius: 18px;
+}
+
+body.dark {
+  --bg: #111;
+  --text: #f5f5f5;
+  --card: #1c1c1e;
+  --border: #3a3a3c;
+  --accent: #0a84ff;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  transition: background .4s, color .4s;
+}
+
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-left {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav nav a {
+  margin-right: 18px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.logo {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 50px;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  padding: 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .3s, box-shadow .3s;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,.15); }
+
+/* HERO */
+.hero-small {
+  text-align: center;
+  margin: 60px 0 30px;
+}
+.hero-small h1 { font-size: 42px; font-weight: 600; margin-bottom: 6px; }
+.hero-small p { opacity: 0.7; }
+
+/* ANIMACIONES */
+.fade-in {
+  animation: fade .6s ease forwards;
+}
+@keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 40px auto 0;
+  margin-top: 34px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  transition: transform .25s, box-shadow .25s, background .25s;
+}
+
+.back-link:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
+}
+.theme-toggle {
+  border: none;
+  background: var(--card);
+  color: var(--text);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .3s, transform .3s, box-shadow .3s;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+.icon-switch {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: var(--card);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background .3s, box-shadow .3s;
+}
+
+.icon-switch:hover {
+  box-shadow: 0 10px 26px rgba(0,0,0,.18);
+}
+
+.icon {
+  display: inline-block;
+  transition: transform .4s ease, opacity .4s ease;
+}
+
+body.dark .icon {
+  transform: rotate(360deg) scale(1.1);
+  opacity: 1;
+}
+
+body:not(.dark) .icon {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+.post-content {
+  max-width: 750px;
+  margin: 60px auto;
+  padding: 0 24px;
+  text-align: center;
+  line-height: 1.65;
+  font-size: 18px;
+}
+
+.post-content h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.post-content p,
+.post-content li,
+.post-content div {
+  margin-top: 18px;
+  opacity: 0.9;
+}
+
+.post-content img {
+  display: block;
+  margin: 32px auto;
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  transition: transform .3s ease;
+}
+
+.post-content img:hover {
+  transform: scale(1.03);
+}
+.post-content > * + * {
+  margin-top: 42px;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  margin-top: 200px;
+  margin-bottom: 18px;
+}
+
+.post-content img {
+  margin: 40px auto;
+}
